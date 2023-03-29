@@ -1,0 +1,72 @@
+﻿@model Product
+<form asp-controller="Product" asp-action="Delete" method="post">
+    <input asp-for="Id" hidden />
+    <input asp-for="ImageUrl" hidden />
+      <div class="row">
+        <div class="col-10">
+                <div class="border p-3 mt-4 row">
+        <div class="col-12 pb-2">
+            <h2 class="text-primary">Delete Product</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" class="form-control"disabled />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" class="form-control"disabled ></textarea>            
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="ISBN"></label>
+            <input asp-for="ISBN" class="form-control" disabled/>
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="Author"></label>
+            <input asp-for="Author" class="form-control" disabled/>
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="ListPrice"></label>
+            <input asp-for="ListPrice" class="form-control" disabled/>
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="Price"></label>
+            <input asp-for="Price" class="form-control" disabled/>
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="Price50"></label>
+            <input asp-for="Price50" class="form-control" disabled/>
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="Price100"></label>
+            <input asp-for="Price100" class="form-control"disabled />
+        </div>
+         <div class="mb-3 col-6">
+            <label asp-for="ImageUrl"></label>
+            <input asp-for="ImageUrl" type="file" id="uploadBox" name="file" class="form-control" disabled/>
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="CategoryId"></label>
+            <select asp-for=CategoryId asp-items="ViewBag.CategoryList" class="form-select" disabled>
+                <option disabled selected>--Select Category--</option>
+            </select>
+        </div>
+         <div class="mb-3 col-6">
+            <label asp-for="CoverTypeId"></label>
+            <select asp-for=CoverTypeId asp-items="@ViewData["CoverList"] as IEnumerable<SelectListItem>" class="form-select" disabled>
+                <option disabled selected>--Select Cover--</option>
+            </select>
+        </div>
+        <div class="col-6">
+        <button type="submit" class="btn btn-danger" style="width:150px">Delete</button>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back To List
+        </a>
+        </div>
+    </div>
+        </div>
+        <div class="col-2 pt-4">
+            <img src="~/Imgs/Products/@Model.ImageUrl" width="100%" style="border-radius : 5px ; border : 1px solid #bbb9b9" />
+        </div>
+    </div>
+</form>

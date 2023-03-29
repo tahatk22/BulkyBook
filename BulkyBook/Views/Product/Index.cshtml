@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Index";
+}
+@section Table{
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <link href="~/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet" />
+}
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary"> Product List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Product" asp-action="UpSert" class="btn btn-primary">
+                <i class="bi bi-patch-plus"></i> &ensp; Create New Product
+            </a>
+        </div>
+    </div>
+    <br />
+<table id="myTable" class="table table-bordered table-striped js-basic-example" style="width:100%">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>ISBN</th>
+            <th>Author</th>
+            <th>Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+                <tr>
+                <td width="25%" >@item.Title</td>
+                <td >@item.Description</td>
+                <td >@item.ISBN</td>
+                <td >@item.Author</td>
+                <td >@item.Category.Name</td>
+                <td ><a class="btn btn-primary" asp-controller="Product" asp-action="UpSert" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>&ensp;Edit</a></td>
+                <td ><a class="btn btn-danger" asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id"><i class="bi bi-trash3-fill"></i>&ensp;Delete</a></td>
+            </tr>
+            }
+    </tbody>
+</table>
+</div>
+@section Scripts{
+    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="~/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="~/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+
+    <script>
+        $(function () {
+            $('.js-basic-example').DataTable({
+                responsive: true,
+                paging: true,
+                pageLength: 5,
+                bSort: true,
+                bFilter: true,
+                lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+            });
+        });
+    </script>
+}

@@ -1,0 +1,12 @@
+G:\C# Projects(.Net6)\BulkyBook.Utility\bin\Debug\net6.0\BulkyBook.Utility.deps.json
+G:\C# Projects(.Net6)\BulkyBook.Utility\bin\Debug\net6.0\BulkyBook.Utility.dll
+G:\C# Projects(.Net6)\BulkyBook.Utility\bin\Debug\net6.0\BulkyBook.Utility.pdb
+G:\C# Projects(.Net6)\BulkyBook.Utility\obj\Debug\net6.0\BulkyBook.Utility.csproj.AssemblyReference.cache
+G:\C# Projects(.Net6)\BulkyBook.Utility\obj\Debug\net6.0\BulkyBook.Utility.GeneratedMSBuildEditorConfig.editorconfig
+G:\C# Projects(.Net6)\BulkyBook.Utility\obj\Debug\net6.0\BulkyBook.Utility.AssemblyInfoInputs.cache
+G:\C# Projects(.Net6)\BulkyBook.Utility\obj\Debug\net6.0\BulkyBook.Utility.AssemblyInfo.cs
+G:\C# Projects(.Net6)\BulkyBook.Utility\obj\Debug\net6.0\BulkyBook.Utility.csproj.CoreCompileInputs.cache
+G:\C# Projects(.Net6)\BulkyBook.Utility\obj\Debug\net6.0\BulkyBook.Utility.dll
+G:\C# Projects(.Net6)\BulkyBook.Utility\obj\Debug\net6.0\refint\BulkyBook.Utility.dll
+G:\C# Projects(.Net6)\BulkyBook.Utility\obj\Debug\net6.0\BulkyBook.Utility.pdb
+G:\C# Projects(.Net6)\BulkyBook.Utility\obj\Debug\net6.0\ref\BulkyBook.Utility.dll

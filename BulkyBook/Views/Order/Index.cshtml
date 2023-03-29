@@ -1,0 +1,111 @@
+﻿@model IEnumerable<OrderHeader>
+@{
+    var status = Context.Request.Query["status"];
+     var pending="text-primary";
+     var inprocess="text-primary";
+     var completed="text-primary";
+     var approved="text-primary";
+     var all="text-primary";
+
+    switch (status)
+    {
+        case "pending":
+            pending = "active text-white";
+            break;
+            case "inprocess":
+            inprocess = "active text-white";
+            break;
+            case "completed":
+            completed = "active text-white";
+            break;
+            case "approved":
+            approved = "active text-white";
+            break;
+            default:
+            all = "active text-white";
+            break;
+    }
+
+}
+@section Table{
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <link href="~/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+    <link href="~/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet" />
+}
+<div class="p-3">
+    <div class="d-flex justify-content-between pt-4">
+        <div class="p-2">
+            <h2 class="text-primary"> Order List</h2>
+        </div>
+        <div class="p-2">
+            <ul class="list-group list-group-horizontal-sm">
+                <a style="text-decoration:none;" asp-controller="Order"
+                    asp-action="Index" asp-route-status="inprocess">
+                    <li class="list-group-item @inprocess">In Process</li>
+                </a>
+                <a style="text-decoration:none;" asp-controller="Order"
+                    asp-action="Index" asp-route-status="pending">
+                    <li class="list-group-item @pending">Payment Pending</li>
+                </a>
+                <a style="text-decoration:none;" asp-controller="Order"
+                    asp-action="Index" asp-route-status="completed">
+                    <li class="list-group-item @completed">Completed</li>
+                </a>
+                 <a style="text-decoration:none;" asp-controller="Order"
+                    asp-action="Index" asp-route-status="approved">
+                    <li class="list-group-item @approved">Approved</li>
+                </a>
+                <a style="text-decoration:none;" asp-controller="Order"
+                    asp-action="Index" asp-route-status="all">
+                    <li class="list-group-item @all">All</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <br /><br />
+<table id="myTable" class="table table-bordered table-striped js-basic-example" style="width:100%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+            {
+                <tr>
+                <td width="25%" >@item.Id</td>
+                <td >@item.Name</td>
+                <td >@item.PhoneNumber</td>
+                <td >@item.ApplicationUser.Email</td>
+                <td >@item.OrderStatus</td>
+                <td >@item.OrderTotal</td>
+                <td ><a class="btn btn-primary" asp-controller="Order" asp-action="Details" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i>&ensp;Details</a></td>
+            </tr>
+            }
+    </tbody>
+</table>
+</div>
+@section Scripts{
+    <script src="~/plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <script src="~/plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="~/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+
+    <script>
+        $(function () {
+            $('.js-basic-example').DataTable({
+                responsive: true,
+                paging: true,
+                pageLength: 5,
+                bSort: true,
+                bFilter: true,
+                lengthMenu: [[5, 10, 25, 50, -1], [5, 10, 25, 50, "All"]],
+            });
+        });
+    </script>
+}

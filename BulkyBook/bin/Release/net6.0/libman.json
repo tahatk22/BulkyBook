@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "bootswatch@5.2.3",
+      "destination": "wwwroot/bootswatch/",
+      "files": [
+        "flatly/bootstrap.css"
+      ]
+    }
+  ]
+}
