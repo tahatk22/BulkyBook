@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "G:\\C# Projects(.Net6)\\BulkyBook.Models\\BulkyBook.Models.csproj": {}
+    "D:\\Studying Projects\\BulkyBook\\BulkyBook.Models\\BulkyBook.Models.csproj": {}
   },
   "projects": {
-    "G:\\C# Projects(.Net6)\\BulkyBook.Models\\BulkyBook.Models.csproj": {
+    "D:\\Studying Projects\\BulkyBook\\BulkyBook.Models\\BulkyBook.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\C# Projects(.Net6)\\BulkyBook.Models\\BulkyBook.Models.csproj",
+        "projectUniqueName": "D:\\Studying Projects\\BulkyBook\\BulkyBook.Models\\BulkyBook.Models.csproj",
         "projectName": "BulkyBook.Models",
-        "projectPath": "G:\\C# Projects(.Net6)\\BulkyBook.Models\\BulkyBook.Models.csproj",
-        "packagesPath": "C:\\Users\\M.C.C\\.nuget\\packages\\",
-        "outputPath": "G:\\C# Projects(.Net6)\\BulkyBook.Models\\obj\\",
+        "projectPath": "D:\\Studying Projects\\BulkyBook\\BulkyBook.Models\\BulkyBook.Models.csproj",
+        "packagesPath": "C:\\Users\\taha.kamal\\.nuget\\packages\\",
+        "outputPath": "D:\\Studying Projects\\BulkyBook\\BulkyBook.Models\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\M.C.C\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\taha.kamal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,7 +38,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net6.0": {
@@ -65,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\RuntimeIdentifierGraph.json"
         }
       }
     }
